@@ -1,5 +1,10 @@
-# Lab5.2 Securing Web Services
-`Commands install`
+# Lab5.1 REST and GraphQL
+`Assignment:` [assignment](<Lab5 RESTAndGraphQL.pdf>)
+
+`Report:` [report](report/Lab5.1.md)
+
+## Useful commands
+`Install pod`
 ```python
 docker login
 docker build --tag daellhin/egress:latest .
@@ -7,7 +12,7 @@ docker push daellhin/egress:latest
 helm install "egress" helm
 ```
 
-`Commands update`
+`Update pod`
 ```python
 docker build --tag daellhin/egress:latest .
 docker push daellhin/egress:latest

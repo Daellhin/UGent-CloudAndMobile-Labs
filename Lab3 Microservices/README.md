@@ -1,4 +1,9 @@
 # Lab3 Microservices
+`Assignment:` [assignment](<Lab3 Microservices.pdf>)
+
+`Report:` [report](<report/Lab3 report.md>)
+
+## Useful commands
 `Kubernetes`
 ```python
 C:\Users\lorin\.kube
@@ -28,5 +33,3 @@ helm upgrade "ingress-api" helm
 kubectl get deployment
 kubectl rollout restart deployment ingress-api-helm
 ```
-
-# Influx

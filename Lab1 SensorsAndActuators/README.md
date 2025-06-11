@@ -1,4 +1,9 @@
 # Lab 1 SensorsAndActuators
+`Assignment:` [assignment](<Lab1 SensorsAndActuators.pdf>)
+
+`Report:` [report](<report/Lab1 Report.md>)
+
+## Useful commands
 `SSH`
 ```python
 ping IOT07.local

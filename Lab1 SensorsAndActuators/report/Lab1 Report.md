@@ -1,4 +1,4 @@
-# Lab1
+# Lab1 SensorsAndActuators
 Lorin Speybrouck
 
 ## Question

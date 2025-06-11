@@ -1,4 +1,4 @@
-# Lab2
+# Lab2 FastAPI
 Lorin Speybrouck
 
 ## Preparation
