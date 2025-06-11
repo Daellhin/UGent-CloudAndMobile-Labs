@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+{% block title %}My First FastAPI App{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        <h1 class="display-3">Users</h1>
+    </div>
+
+    <table class="table table-striped table-bordered" id="userTable">
+        <thead class="thead-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>RFID ID</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.firstname }}</td>
+                <td>{{ user.lastname }}</td>
+                <td>{{ user.rfidid }}</td>
+                <td>{{ user.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button id="downloadBtn" class="btn btn-primary mb-3" type="button">Export users as CSV</button>
+<script>
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        let table = document.getElementById('userTable');
+        let rows = table.querySelectorAll('tr');
+        let csvContent = "data:text/csv;charset=utf-8,";
+
+        rows.forEach(row => {
+            let cols = row.querySelectorAll('th, td');
+            let rowData = [];
+            cols.forEach(col => rowData.push(col.innerText));
+            csvContent += rowData.join(",") + "\n";
+        });
+
+        let encodedUri = encodeURI(csvContent);
+        let link = document.createElement('a');
+        link.setAttribute('href', encodedUri);
+        link.setAttribute('download', 'user_list.csv');
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+</script>
+{% endblock %}

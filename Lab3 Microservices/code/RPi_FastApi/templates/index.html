@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}My First FastAPI App{% endblock %}
+
+{% block body %}
+    <div class="jumbotron">
+        {% if name %}
+            <h1 class="display-3" style="overflow: hidden">Hello, {{ name }}!</h1>
+            <p>Want to register? <a href="../register">Go to the registration page!</a></p>
+            <p>Want to see the registered users? <a href="../users">Go to the users page!</a></p>
+            <p>Want to control a LED? <a href="../control_led">Go to the Control Room!</a></p>
+        {% else  %}
+            <h1 class="display-3">Hello, World!</h1>
+            <p>Want to register? <a href="../register">Go to the registration page!</a></p>
+        {% endif %}
+    </div>
+
+    <div class="row marketing">
+        <div class="col-lg-12 text-center">
+
+        </div>
+        {% if alert %}
+            <div class="alert alert-info" role="alert">
+                {{alert}}
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
