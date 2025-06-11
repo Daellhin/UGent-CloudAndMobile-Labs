@@ -1,0 +1,10 @@
+ktor:
+  deployment:
+    port: 8087
+    development: true
+  application:
+    modules:
+      - be.ugent.idlab.predict.ocmt.egress.server.modules.security.AuthKt.configure
+      - be.ugent.idlab.predict.ocmt.egress.server.modules.BaseKt.setup
+      - be.ugent.idlab.predict.ocmt.egress.server.modules.rest.ModuleKt.module
+      - be.ugent.idlab.predict.ocmt.egress.server.modules.graphql.ModuleKt.module
